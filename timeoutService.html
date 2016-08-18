@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <p>3 saniye sonra başşlık değişecek</p>
+    <h1>{{myHeader}}</h1>
+
+
+</div>
+
+<script>
+    
+    var app=angular.module('myApp' , []);
+    app.controller('myCtrl' ,function ($scope , $timeout) {
+        $scope.myHeader="merhaba dünya";
+        
+        $timeout(function () {
+            $scope.myHeader="dünya merhaba";
+        } , 3000);
+        
+    });
+    
+</script>
+</body>
+</html>
